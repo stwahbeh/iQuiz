@@ -2,8 +2,8 @@
 //  iQuizUITests.swift
 //  iQuizUITests
 //
-//  Created by sam wahbeh on 11/13/16.
-//  Copyright © 2016 sam wahbeh. All rights reserved.
+//  Created by iGuest on 11/4/16.
+//  Copyright © 2016 Hai Nguyen. All rights reserved.
 //
 
 import XCTest

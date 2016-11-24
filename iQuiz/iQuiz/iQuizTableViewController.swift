@@ -2,20 +2,24 @@
 //  iQuizTableViewController.swift
 //  iQuiz
 //
-//  Created by sam wahbeh on 11/13/16.
-//  Copyright © 2016 sam wahbeh. All rights reserved.
+//  Created by iGuest on 11/4/16.
+//  Copyright © 2016 Hai Nguyen. All rights reserved.
 //
 
 import UIKit
 
 class iQuizTableViewController: UITableViewController {
+    
+    @IBAction func alert(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Settings go here", message: "ayy lmao", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    let topicModel = ["Mathematics", "Marvel Super Heroes", "Science"]
+    let descModel = ["Math problem stuff", "Show off your superhero knowledge", "R u a science master?"]
+    let imgModel = ["math", "marvel", "science"]
 
-    @IBOutlet weak var settings: UIBarButtonItem!
-    
-    let subject = ["Math", "Marvel", "Science"]
-    let descript = ["Math is Fun", "WOW MARVEL", "Sciencey stuff"]
-    let imageIcons = [#imageLiteral(resourceName: "science"), #imageLiteral(resourceName: "math"), #imageLiteral(resourceName: "marvel")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,41 +37,22 @@ class iQuizTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
         // #warning Incomplete implementation, return the number of rows
-        
-        
-        return subject.count
+        return topicModel.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "iQuizCell", for: indexPath) as! iQuizTableViewCell
 
         // Configure the cell...
-        cell.subjectLabel.text = subject[indexPath.row]
-        cell.descriptionLabel.text = descript[indexPath.row]
-        cell.imageLabel.image = imageIcons[indexPath.row]
+        cell.questionLabel.text = topicModel[indexPath.row]
+        cell.descLabel.text = descModel[indexPath.row]
+        cell.img.image = UIImage(named: imgModel[indexPath.row])
+
         return cell
     }
-    
-    @IBAction func openSettings(_ sender: AnyObject) {
-        let settingsAlert = UIAlertController(title: "Settings go here", message: "", preferredStyle: .alert)
-        
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        settingsAlert.addAction(defaultAction)
-        
-        present(settingsAlert, animated: true, completion: nil)
-    }
-    
 
-    
-    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

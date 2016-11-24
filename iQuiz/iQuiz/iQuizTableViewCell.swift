@@ -2,19 +2,17 @@
 //  iQuizTableViewCell.swift
 //  iQuiz
 //
-//  Created by sam wahbeh on 11/13/16.
-//  Copyright © 2016 sam wahbeh. All rights reserved.
+//  Created by iGuest on 11/4/16.
+//  Copyright © 2016 Hai Nguyen. All rights reserved.
 //
 
 import UIKit
 
 class iQuizTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var subjectLabel: UILabel!
-    
-    @IBOutlet weak var descriptionLabel: UILabel!
-    
-    @IBOutlet weak var imageLabel: UIImageView!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var img: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
